@@ -1,0 +1,44 @@
+@import "~antd/lib/style/themes/default.less";
+@import "~common/less/base.less";
+
+.sideBox {
+  height: 100%;
+
+  ul {
+    padding-inline-start: 0px;
+    padding-left: 0;
+  }
+  .logoBox {
+    height: 64px;
+    padding: @spacer / 2;
+    color: #aaa;
+    font-size: 28px;
+    line-height: 64px - @spacer;
+    text-align: center;
+
+  }
+  .theme {
+    height: 40px;
+    padding: 2px;
+    .themeBox {
+      width: 100%;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .collapse {
+    height: 20px;
+  }
+}
+
+.side {
+  //background: @success-color;
+  transition: all 450ms;
+
+  &.light {
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  }
+}

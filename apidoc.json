@@ -1,0 +1,10 @@
+{
+  "name": "凯哥香料 api 文档",
+  "version": "1.0.0",
+  "description": "凯哥香料 api 文档",
+  "title": "凯哥香料 api 文档",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

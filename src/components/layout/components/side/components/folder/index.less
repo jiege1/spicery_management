@@ -1,0 +1,38 @@
+
+.folder {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  transition: all 450ms;
+
+  &:before {
+    content: '';
+    width: 80%;
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    top: 19px;
+    left: 10%;
+    border-radius: 2px;
+  }
+
+  .icon {
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+    background: white;
+    cursor: pointer;
+  }
+
+  &.dark {
+    &:before {
+      background: #666;
+    }
+    .icon {
+      background: #001529;
+      color: #ccc;
+    }
+  }
+}
