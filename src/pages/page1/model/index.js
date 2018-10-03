@@ -1,6 +1,6 @@
 import Base from 'store/model/base';
 import {observable, action} from 'mobx';
-// import {queryList} from '../../../api/page1Api';
+import {queryList} from '../../../api/page1Api';
 
 
 export default class Page1 extends Base {
@@ -12,7 +12,7 @@ export default class Page1 extends Base {
     // console.log(this);
   }
 
-  // @action async queryList(params) {
-  //   this.list = await queryList(params)
-  // }
+  @action async queryList(params) {
+    this.list = await queryList(params);
+  }
 }

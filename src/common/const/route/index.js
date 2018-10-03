@@ -2,6 +2,9 @@ import React from 'react';
 import Loadable from 'react-loadable';
 import {Spin} from 'antd';
 import store from 'store';
+import lazyComponent from './lazyComponent';
+// import Home from 'pages/home';
+// import Page1 from 'pages/page1';
 
 const loading = (err) => {
   // console.log(store);
@@ -14,34 +17,46 @@ const loading = (err) => {
   );
 };
 
-const lazyComponent = (path, model) => {
-  let loader = {
-    component: () => import(`pages/${path}`)
-  };
-  // 动态加载model
-  if (model) {
-    if (typeof model !== 'string') model = path;
-    loader[model] = () => import(`pages/${path}/model`);
-  }
+// const lazyComponent = (path, model) => {
+//   let loader = {
+//     component: () => import(`pages/${path}`)
+//   };
+//   // console.log('loader===', loader);
+//   // 动态加载model
+//   if (model) {
+//     if (typeof model !== 'string') model = path;
+//     loader[model] = () => import(`pages/${path}/model`);
+//   }
+//
+//   return Loadable.Map({
+//     loader,
+//     loading,
+//     render(loaded, props) {
+//       // 将model动态挂载到 store 上
+//       // console.log(loaded);
+//
+//       if (loaded[model]) {
+//         const Model = loaded[model].default;
+//         if (!store[model]) {
+//           store[model] = new Model();
+//         }
+//       }
+//       let C = loaded.component.default;
+//       return <C {...props}/>;
+//     }
+//   });
+// };
 
-  return Loadable.Map({
-    loader,
-    loading,
-    render(loaded, props) {
-      // 将model动态挂载到 store 上
-      // console.log(loaded);
-
-      if (loaded[model]) {
-        const Model = loaded[model].default;
-        if (!store[model]) {
-          store[model] = new Model();
-        }
-      }
-      let C = loaded.component.default;
-      return <C {...props}/>;
-    }
-  });
-};
+// const lazyComponent = (path, model) => {
+//   console.log('path====', path);
+//   import('pages/page1').then(res => {
+//     console.log(res.default);
+//   });
+//
+//   // let data = await import('pages/page1');
+//   // console.log(data);
+//   return Page1;
+// };
 
 const routeData = [
   {
@@ -62,6 +77,7 @@ const routeData = [
     path: '/page1',
     icon: 'desktop',
     desc: '页面1',
+    // component: Page1,
     component: lazyComponent('page1', true),
     isAuth: true,
     children: [],

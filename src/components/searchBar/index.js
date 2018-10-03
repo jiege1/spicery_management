@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import css from './index.less';
-import { Input, Button, Form, Select, Icon, Dropdown, Menu, Popconfirm } from 'antd';
-// const {Item: FormItem, create: createForm} = Form;
-// const {Option} = Select;
-// const {Item: MenuItem} = Menu;
+import { Input, Button, Select, Form, Icon, Dropdown, Menu, Popconfirm } from 'antd';
+const {Item: FormItem, create: createForm} = Form;
+const {Option} = Select;
+const {Item: MenuItem} = Menu;
 
-// @createForm()
+@createForm()
 export default class SearchBar extends React.Component {
 
   static propTypes = {

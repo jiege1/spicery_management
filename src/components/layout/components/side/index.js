@@ -1,13 +1,13 @@
 import React from 'react';
 import Folder from './components/folder';
-import { Layout as AntLayout,  Menu as AntMenu, Icon, Switch, Radio } from 'antd';
+import { Layout as AntLayout, Menu as AntMenu, Icon, Switch, Radio } from 'antd';
 import css from './index.less';
 import classNames from 'classnames';
 import {inject, observer} from 'mobx-react';
 import routeData from 'common/const/route';
 import {Link, withRouter} from 'react-router-dom';
 
-const { Sider} = AntLayout;
+const {Sider} = AntLayout;
 const {SubMenu, Item: MenuItem} = AntMenu;
 
 @withRouter
@@ -34,6 +34,11 @@ export default class Side extends React.Component {
   }
 
   onCollapse(collapsed) {
+    // let test = {
+    //   a: 1,
+    //   a: 12,
+    // };
+
     // console.log('collapsed===', collapsed);
     // this.setState({ collapsed });
   }

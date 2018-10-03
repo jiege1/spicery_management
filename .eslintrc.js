@@ -52,6 +52,7 @@ module.exports = {
     "$": false, // Kimi 全局变量
     "goldlog": true, // 黄金令箭
     "WindVane": false, // 手淘环境
+    "require": false, // 手淘环境
   },
   "parser": "babel-eslint",
   "rules": {
@@ -76,12 +77,20 @@ module.exports = {
     "global-strict": [0, "always"], // deprecated rule, 忽略，采用上面规则限制
     "no-extra-strict": 0,
     "no-shadow": 1, // 局部变量和外层变量重名
-    "no-unused-vars": [1, { // 局部变量未使用
-      "vars": "local",
-      "args": "after-used",
-      "varsIgnorePattern": "createElement"
-    }],
+
+    // 使用该项配置会导致esLint挂掉?  babel-eslint升级之8.0.0版本
+    // "no-unused-vars": "error",
+    "no-unused-vars": [1,// 局部变量未使用
+      {
+        "vars": "all",
+        "args": "after-used"
+      }
+    ],
+
+
     "no-undef": 2, // 未定义的变量
+    "no-dupe-keys": 2, // 在创建对象字面量时不允许键重复 {a:1,a:1}
+    "no-dupe-args": 2,// 函数参数不能重复
     "no-unused-expressions": 1, // 未使用的表达式
     "no-use-before-define": 0, // 允许定义前使用
     "yoda": 0,

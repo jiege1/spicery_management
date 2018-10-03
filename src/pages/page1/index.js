@@ -50,7 +50,7 @@ export default class Page1 extends React.Component {
     return (
       <div>
         <Card title={'Card title'}>
-          {/*<SearchBar {...searchBarProps}/>*/}
+          <SearchBar {...searchBarProps}/>
         </Card>
       </div>
     );

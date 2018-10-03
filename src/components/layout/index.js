@@ -28,7 +28,7 @@ export default class Layout extends React.Component {
   render() {
     // const {sideTheme} = this.props.store.app;, {[css.light]: sideTheme === 'dark'}
     return (
-      <AntLayout className={css.layout}>
+      <AntLayout className={css.layout} style={{minHeight: '100vh'}}>
         <Side />
         <AntLayout className={css.container}>
           <AntHeader className={classnames(css.header)}>
