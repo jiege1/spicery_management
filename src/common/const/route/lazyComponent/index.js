@@ -1,7 +1,7 @@
 import React from 'react';
 import {Spin} from 'antd';
 
-export default function lazyComponent(path) {
+export default function lazyComponent(path, model) {
 
   return class extends React.Component {
 
