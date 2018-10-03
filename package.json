@@ -31,6 +31,7 @@
     "mobx-react": "^5.2.8",
     "mockjs": "^1.0.1-beta3",
     "open-browser-webpack-plugin": "0.0.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "prop-types": "^15.6.1",
     "qs": "^6.5.1",
     "react": "^16.4.0",

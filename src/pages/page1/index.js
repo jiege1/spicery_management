@@ -19,8 +19,8 @@ export default class Page1 extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.store.queryList({pageSize: 10});
-    // console.log(this.props.store);
+    this.props.store.page1.queryList({pageSize: 10});
+    console.log(this.props.store.page1);
   }
 
   queryList() {
@@ -32,8 +32,8 @@ export default class Page1 extends React.Component {
       searchList: [
         {
           key: 'customerName',
-          label: '姓名：',
-          placeholder: '请输入姓名',
+          label: '名称：',
+          placeholder: '请输入名称',
           type: 'input',
         },
       ],

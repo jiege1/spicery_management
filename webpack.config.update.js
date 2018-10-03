@@ -2,6 +2,14 @@ const IS_DEV = process.env.NODE_ENV !== 'production';
 const rootSrc = __dirname + '/src';
 module.exports = (config) => {
 
+  if (IS_DEV) {
+    // mock数据必须加的
+    config.entry = {
+      mock: rootSrc + '/mock/index.js',
+      ...config.entry
+    };
+  }
+
   config = {
     ...config,
     resolve: {
@@ -15,10 +23,7 @@ module.exports = (config) => {
         // mock: rootSrc + '/mock',
       }
     },
-    entry: { // mock数据必须加的
-      mock: rootSrc + '/mock/index.js',
-      ...config.entry
-    }
+
   };
 
   return config;

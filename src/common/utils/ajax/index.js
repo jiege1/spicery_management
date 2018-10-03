@@ -8,9 +8,8 @@ export default class Ajax {
     const api = eval(`CFG.api.${url}`);
     // console.log(api);
     if (method === 'get') { // get请求 外面包一层{}
-      method = {method};
+      params = {params};
     }
-
     return axios[method](api, params).then(res => {
 
       const {data, code} = res.data;
